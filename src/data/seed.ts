@@ -134,14 +134,15 @@ function buildComplaints(): Complaint[] {
     const category = categories[Math.floor(rand() * categories.length)]!;
     const title = titles[category][Math.floor(rand() * titles[category].length)]!;
     const priority = priorities[Math.floor(rand() * priorities.length)]!;
-    const daysAgo = Math.floor(rand() * 150);
+    // Keep a healthy mix of fresh (open) and older (resolved) complaints.
+    const daysAgo = i < 16 ? Math.floor(rand() * 12) : 12 + Math.floor(rand() * 140);
 
     // Older complaints skew towards completed, newer towards pending.
     let status: Status;
     const r = rand();
     if (daysAgo > 30) status = r > 0.12 ? "Completed" : "In Progress";
     else if (daysAgo > 10) status = r > 0.6 ? "Completed" : r > 0.3 ? "In Progress" : "Assigned";
-    else status = r > 0.7 ? "In Progress" : r > 0.35 ? "Assigned" : "Pending";
+    else status = r > 0.72 ? "In Progress" : r > 0.42 ? "Assigned" : "Pending";
 
     const assignee =
       status === "Pending" ? undefined : staff[Math.floor(rand() * staff.length)]!;
