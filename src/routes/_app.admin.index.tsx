@@ -170,7 +170,7 @@ function AdminDashboard() {
           <PieChart>
             <Pie data={byStatus} dataKey="value" nameKey="name" innerRadius={55} outerRadius={90}>
               {byStatus.map((_, i) => (
-                <Cell key={i} fill={STATUS_COLORS[i % STATUS_COLORS.length]} />
+                <Cell key={i} fill={STATUS_COLORS[i % STATUS_COLORS.length]!} />
               ))}
             </Pie>
             <Legend />
