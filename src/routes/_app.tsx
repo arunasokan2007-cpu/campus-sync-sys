@@ -39,7 +39,7 @@ import {
 import { Toaster } from "@/components/ui/sonner";
 import type { Role } from "@/data/types";
 import { timeAgo } from "@/lib/format";
-import { StoreProvider, useMyNotifications, useStore } from "@/lib/store";
+import { useMyNotifications, useStore } from "@/lib/store";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/_app")({
@@ -73,8 +73,7 @@ const roleLabels: Record<Role, string> = {
 
 function AppLayout() {
   return (
-    <StoreProvider>
-      <SidebarProvider>
+    <SidebarProvider>
         <div className="flex min-h-screen w-full bg-slate-50">
           <AppSidebar />
           <div className="flex min-w-0 flex-1 flex-col">
@@ -84,9 +83,8 @@ function AppLayout() {
             </main>
           </div>
         </div>
-        <Toaster position="top-right" richColors />
-      </SidebarProvider>
-    </StoreProvider>
+      <Toaster position="top-right" richColors />
+    </SidebarProvider>
   );
 }
 

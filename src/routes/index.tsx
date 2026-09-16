@@ -3,7 +3,7 @@ import { Building2, GraduationCap, ShieldCheck, Wrench } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import type { Role } from "@/data/types";
-import { StoreProvider, useStore } from "@/lib/store";
+import { useStore } from "@/lib/store";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -22,11 +22,7 @@ export const Route = createFileRoute("/")({
       },
     ],
   }),
-  component: () => (
-    <StoreProvider>
-      <Landing />
-    </StoreProvider>
-  ),
+  component: Landing,
 });
 
 const roles: {
