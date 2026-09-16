@@ -39,18 +39,20 @@ const studentRows: Array<[string, string, string, string, string, string]> = [
   ["Nisha Gupta", "21CSE0876", "Chanakya Hostel", "C", "C-226", "B.Tech CSE"],
 ];
 
-export const students: User[] = studentRows.map(([name, studentId, hostel, block, room, course], i) => ({
-  id: `stu-${i + 1}`,
-  name,
-  role: "student" as const,
-  email: `${studentId.toLowerCase()}@college.edu`,
-  phone: `+91 9${String(812340000 + i * 10457391).slice(0, 9)}`,
-  studentId,
-  hostel,
-  block,
-  room,
-  course,
-}));
+export const students: User[] = studentRows.map(
+  ([name, studentId, hostel, block, room, course], i) => ({
+    id: `stu-${i + 1}`,
+    name,
+    role: "student" as const,
+    email: `${studentId.toLowerCase()}@college.edu`,
+    phone: `+91 9${String(812340000 + i * 10457391).slice(0, 9)}`,
+    studentId,
+    hostel,
+    block,
+    room,
+    course,
+  }),
+);
 
 const staffRows: Array<[string, Category, string]> = [
   ["Ramesh Kumar", "Electrical", "Morning (8am - 4pm)"],
@@ -83,13 +85,21 @@ export const admins: User[] = [
 export const seedUsers: User[] = [...students, ...staff, ...admins];
 
 const titles: Record<Category, string[]> = {
-  Electrical: ["Power socket not working", "Frequent short circuit in room", "Switchboard sparking"],
+  Electrical: [
+    "Power socket not working",
+    "Frequent short circuit in room",
+    "Switchboard sparking",
+  ],
   Plumbing: ["Washbasin pipe leaking", "Toilet flush not working", "Bathroom drain blocked"],
   Fan: ["Ceiling fan making noise", "Fan not rotating", "Fan regulator faulty"],
   Light: ["Tube light flickering", "Study lamp not working", "Corridor light fused"],
   Furniture: ["Study table drawer broken", "Bed frame loose", "Chair leg cracked"],
   Water: ["No water supply since morning", "Hot water not available", "Water cooler not cooling"],
-  Cleaning: ["Room not cleaned for a week", "Garbage not collected", "Washroom needs deep cleaning"],
+  Cleaning: [
+    "Room not cleaned for a week",
+    "Garbage not collected",
+    "Washroom needs deep cleaning",
+  ],
   "Internet/Wi-Fi": ["Wi-Fi keeps disconnecting", "Very slow internet speed", "LAN port dead"],
   Other: ["Window latch broken", "Door lock jammed", "Cupboard key lost"],
 };
@@ -144,8 +154,7 @@ function buildComplaints(): Complaint[] {
     else if (daysAgo > 10) status = r > 0.6 ? "Completed" : r > 0.3 ? "In Progress" : "Assigned";
     else status = r > 0.72 ? "In Progress" : r > 0.42 ? "Assigned" : "Pending";
 
-    const assignee =
-      status === "Pending" ? undefined : staff[Math.floor(rand() * staff.length)]!;
+    const assignee = status === "Pending" ? undefined : staff[Math.floor(rand() * staff.length)]!;
 
     const createdAt = iso(daysAgo);
     const timeline: TimelineEvent[] = [

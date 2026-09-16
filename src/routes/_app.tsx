@@ -74,15 +74,15 @@ const roleLabels: Record<Role, string> = {
 function AppLayout() {
   return (
     <SidebarProvider>
-        <div className="flex min-h-screen w-full bg-slate-50">
-          <AppSidebar />
-          <div className="flex min-w-0 flex-1 flex-col">
-            <TopBar />
-            <main className="flex-1 px-4 py-6 md:px-8">
-              <Outlet />
-            </main>
-          </div>
+      <div className="flex min-h-screen w-full bg-slate-50">
+        <AppSidebar />
+        <div className="flex min-w-0 flex-1 flex-col">
+          <TopBar />
+          <main className="flex-1 px-4 py-6 md:px-8">
+            <Outlet />
+          </main>
         </div>
+      </div>
       <Toaster position="top-right" richColors />
     </SidebarProvider>
   );

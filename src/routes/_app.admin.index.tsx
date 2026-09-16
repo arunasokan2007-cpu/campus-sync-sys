@@ -159,7 +159,14 @@ function AdminDashboard() {
         <ChartCard title="Complaints by Category">
           <BarChart data={byCategory} margin={{ left: -20 }}>
             <CartesianGrid strokeDasharray="3 3" vertical={false} />
-            <XAxis dataKey="name" tick={{ fontSize: 11 }} interval={0} angle={-25} height={60} textAnchor="end" />
+            <XAxis
+              dataKey="name"
+              tick={{ fontSize: 11 }}
+              interval={0}
+              angle={-25}
+              height={60}
+              textAnchor="end"
+            />
             <YAxis tick={{ fontSize: 11 }} allowDecimals={false} />
             <Tooltip />
             <Bar dataKey="count" fill="#2563eb" radius={[4, 4, 0, 0]} />
@@ -186,7 +193,13 @@ function AdminDashboard() {
             <Tooltip />
             <Legend />
             <Bar dataKey="open" stackId="a" fill="#f59e0b" name="Open" />
-            <Bar dataKey="completed" stackId="a" fill="#10b981" name="Completed" radius={[4, 4, 0, 0]} />
+            <Bar
+              dataKey="completed"
+              stackId="a"
+              fill="#10b981"
+              name="Completed"
+              radius={[4, 4, 0, 0]}
+            />
           </BarChart>
         </ChartCard>
 

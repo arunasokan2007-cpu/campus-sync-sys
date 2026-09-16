@@ -156,9 +156,7 @@ function AssignedComplaints() {
                   rows={2}
                   placeholder="Add a maintenance note, e.g. Capacitor replaced"
                   value={noteDrafts[c.id] ?? ""}
-                  onChange={(e) =>
-                    setNoteDrafts((d) => ({ ...d, [c.id]: e.target.value }))
-                  }
+                  onChange={(e) => setNoteDrafts((d) => ({ ...d, [c.id]: e.target.value }))}
                 />
                 <div className="flex justify-end">
                   <Button

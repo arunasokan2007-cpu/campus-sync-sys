@@ -45,9 +45,7 @@ function MyComplaints() {
     const q = query.trim().toLowerCase();
     const matchesQuery =
       !q ||
-      [c.id, c.title, c.category, c.room, c.description].some((v) =>
-        v.toLowerCase().includes(q),
-      );
+      [c.id, c.title, c.category, c.room, c.description].some((v) => v.toLowerCase().includes(q));
     return matchesStatus && matchesQuery;
   });
 

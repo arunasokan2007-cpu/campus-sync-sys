@@ -137,9 +137,7 @@ function ComplaintDetails() {
                     <span
                       className={cn(
                         "z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full ring-4 ring-card",
-                        done
-                          ? "bg-primary text-primary-foreground"
-                          : "bg-slate-100 text-slate-400",
+                        done ? "bg-primary text-primary-foreground" : "bg-slate-100 text-slate-400",
                       )}
                     >
                       <Icon className="h-4 w-4" />

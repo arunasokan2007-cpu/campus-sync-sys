@@ -54,12 +54,7 @@ function StaffDashboard() {
           tone="indigo"
           hint={`${highPriorityOpen} high priority open`}
         />
-        <StatCard
-          label="Completed"
-          value={count("Completed")}
-          icon={CheckCircle2}
-          tone="emerald"
-        />
+        <StatCard label="Completed" value={count("Completed")} icon={CheckCircle2} tone="emerald" />
       </div>
 
       <div className="mt-8">

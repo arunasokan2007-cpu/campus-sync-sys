@@ -60,12 +60,7 @@ function StudentDashboard() {
           tone="indigo"
           hint={`${count("Assigned")} assigned`}
         />
-        <StatCard
-          label="Completed"
-          value={count("Completed")}
-          icon={CheckCircle2}
-          tone="emerald"
-        />
+        <StatCard label="Completed" value={count("Completed")} icon={CheckCircle2} tone="emerald" />
       </div>
 
       <div className="mt-6 grid gap-6 lg:grid-cols-3">

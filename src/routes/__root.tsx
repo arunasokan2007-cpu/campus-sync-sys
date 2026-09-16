@@ -79,10 +79,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "HostelCare ERP — Hostel Maintenance & Complaint Management" },
-      { name: "description", content: "Role based hostel room maintenance and complaint management system." },
+      {
+        name: "description",
+        content: "Role based hostel room maintenance and complaint management system.",
+      },
       { name: "author", content: "Lovable" },
       { property: "og:title", content: "HostelCare ERP" },
-      { property: "og:description", content: "Hostel maintenance and complaint management for students, staff and admins." },
+      {
+        property: "og:description",
+        content: "Hostel maintenance and complaint management for students, staff and admins.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },

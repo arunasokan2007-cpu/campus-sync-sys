@@ -78,8 +78,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   }, [state, hydrated]);
 
   const value = React.useMemo<StoreValue>(() => {
-    const currentUser =
-      state.users.find((u) => u.id === state.currentUserId) ?? state.users[0]!;
+    const currentUser = state.users.find((u) => u.id === state.currentUserId) ?? state.users[0]!;
     const userById = (id?: string) => (id ? state.users.find((u) => u.id === id) : undefined);
     const now = () => new Date().toISOString();
 
@@ -138,9 +137,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
           createdAt: at,
           updatedAt: at,
           photos: input.photos,
-          timeline: [
-            { status: "Pending", at, by: currentUser.name, note: "Complaint submitted" },
-          ],
+          timeline: [{ status: "Pending", at, by: currentUser.name, note: "Complaint submitted" }],
           notes: [],
         };
         setState((s) => ({

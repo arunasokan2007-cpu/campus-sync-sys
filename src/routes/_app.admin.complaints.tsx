@@ -119,7 +119,12 @@ function AllComplaints() {
           </div>
           <div>
             <Label className="text-xs text-muted-foreground">To</Label>
-            <Input type="date" className="mt-1" value={to} onChange={(e) => setTo(e.target.value)} />
+            <Input
+              type="date"
+              className="mt-1"
+              value={to}
+              onChange={(e) => setTo(e.target.value)}
+            />
           </div>
         </div>
       </div>
