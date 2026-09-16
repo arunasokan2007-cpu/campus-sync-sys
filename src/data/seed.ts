@@ -2,6 +2,7 @@ import type {
   AppNotification,
   Category,
   Complaint,
+  MaintenanceNote,
   Priority,
   Status,
   TimelineEvent,
@@ -165,7 +166,7 @@ function buildComplaints(): Complaint[] {
         note: "Work started",
       });
     }
-    const notes = [];
+    const notes: MaintenanceNote[] = [];
     if (status === "Completed") {
       const note = staffNotes[category]![Math.floor(rand() * staffNotes[category]!.length)]!;
       timeline.push({
