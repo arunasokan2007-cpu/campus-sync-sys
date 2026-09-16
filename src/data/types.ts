@@ -29,21 +29,21 @@ export interface User {
   email: string;
   phone: string;
   /** student only */
-  studentId?: string;
-  hostel?: string;
-  block?: string;
-  room?: string;
-  course?: string;
+  studentId?: string | undefined;
+  hostel?: string | undefined;
+  block?: string | undefined;
+  room?: string | undefined;
+  course?: string | undefined;
   /** staff only */
-  specialty?: Category;
-  shift?: string;
+  specialty?: Category | undefined;
+  shift?: string | undefined;
 }
 
 export interface TimelineEvent {
   status: Status;
   at: string;
   by: string;
-  note?: string;
+  note?: string | undefined;
 }
 
 export interface MaintenanceNote {
@@ -63,7 +63,7 @@ export interface Complaint {
   block: string;
   room: string;
   studentId: string;
-  assignedTo?: string;
+  assignedTo?: string | undefined;
   createdAt: string;
   updatedAt: string;
   photos: string[];
@@ -78,5 +78,5 @@ export interface AppNotification {
   body: string;
   at: string;
   read: boolean;
-  complaintId?: string;
+  complaintId?: string | undefined;
 }

@@ -23,7 +23,7 @@ export const HOSTELS = [
   { name: "Chanakya Hostel", blocks: ["C", "D"] },
 ];
 
-export const students: User[] = [
+const studentRows: Array<[string, string, string, string, string, string]> = [
   ["Arun Asokan", "22CSE1041", "Aryabhatta Hostel", "A", "A-204", "B.Tech CSE"],
   ["Meera Nair", "22ECE1123", "Aryabhatta Hostel", "A", "A-207", "B.Tech ECE"],
   ["Rahul Verma", "21MEC0932", "Aryabhatta Hostel", "B", "B-105", "B.Tech Mech"],
@@ -36,7 +36,9 @@ export const students: User[] = [
   ["Priya Sharma", "23BSC2431", "Aryabhatta Hostel", "A", "A-119", "B.Sc Physics"],
   ["Joel Thomas", "22ECE1201", "Bhaskara Hostel", "B", "B-120", "B.Tech ECE"],
   ["Nisha Gupta", "21CSE0876", "Chanakya Hostel", "C", "C-226", "B.Tech CSE"],
-].map(([name, studentId, hostel, block, room, course], i) => ({
+];
+
+export const students: User[] = studentRows.map(([name, studentId, hostel, block, room, course], i) => ({
   id: `stu-${i + 1}`,
   name,
   role: "student" as const,
@@ -49,19 +51,21 @@ export const students: User[] = [
   course,
 }));
 
-export const staff: User[] = [
+const staffRows: Array<[string, Category, string]> = [
   ["Ramesh Kumar", "Electrical", "Morning (8am - 4pm)"],
   ["Suresh Pillai", "Plumbing", "Morning (8am - 4pm)"],
   ["Lakshmi Devi", "Cleaning", "Evening (12pm - 8pm)"],
   ["Anil Joshi", "Internet/Wi-Fi", "Morning (8am - 4pm)"],
   ["Mohan Rathore", "Furniture", "Evening (12pm - 8pm)"],
-].map(([name, specialty, shift], i) => ({
+];
+
+export const staff: User[] = staffRows.map(([name, specialty, shift], i) => ({
   id: `stf-${i + 1}`,
   name,
   role: "staff" as const,
   email: `${name.split(" ")[0]!.toLowerCase()}.maint@college.edu`,
   phone: `+91 97${(31000000 + i * 219371).toString().slice(0, 8)}`,
-  specialty: specialty as Category,
+  specialty,
   shift,
 }));
 
