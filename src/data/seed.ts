@@ -44,7 +44,7 @@ export const students: User[] = studentRows.map(([name, studentId, hostel, block
   name,
   role: "student" as const,
   email: `${studentId.toLowerCase()}@college.edu`,
-  phone: `+91 98${(40000000 + i * 137171).toString().slice(0, 8)}`,
+  phone: `+91 9${String(812340000 + i * 10457391).slice(0, 9)}`,
   studentId,
   hostel,
   block,
@@ -65,7 +65,7 @@ export const staff: User[] = staffRows.map(([name, specialty, shift], i) => ({
   name,
   role: "staff" as const,
   email: `${name.split(" ")[0]!.toLowerCase()}.maint@college.edu`,
-  phone: `+91 97${(31000000 + i * 219371).toString().slice(0, 8)}`,
+  phone: `+91 9${String(744125000 + i * 21093771).slice(0, 9)}`,
   specialty,
   shift,
 }));
